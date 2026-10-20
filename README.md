@@ -6,6 +6,10 @@ A Streamlit-based control-tower demo for a parcel network that optimizes one-day
 
 The project entrypoint is now `control_tower.py`.
 
+## Live demo
+
+[Open the Parcel Network Control Tower](https://parcel-network-control-tower.streamlit.app/)
+
 ## Run locally
 
 ```bash
