@@ -143,7 +143,7 @@ section[data-testid="stMain"] {{
 }}
 
 .block-container {{
-    padding-top: 1.0rem !important;
+    padding-top: 4.5rem !important;
     padding-bottom: 2.5rem !important;
     max-width: 1400px;
     overflow: visible !important;
