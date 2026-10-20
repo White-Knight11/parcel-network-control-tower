@@ -24,16 +24,11 @@ You can also use the compatibility entrypoint:
 python3 -m streamlit run app.py
 ```
 
-## GitHub / deployment notes
+## Deployment
 
-This project is GitHub-ready as a standard Python app. You still need to create or connect a GitHub repository and push it from your own account.
-
-For a public Streamlit deployment, the easiest path is to:
-
-1. create a GitHub repo
-2. push the project
-3. deploy from Streamlit Community Cloud using the repo and branch
-4. set the main file to `control_tower.py`
+The public GitHub repository is [White-Knight11/parcel-network-control-tower](https://github.com/White-Knight11/parcel-network-control-tower).
+The public Streamlit deployment is linked above and deploys `control_tower.py`
+from the `main` branch.
 
 ## Notes
 
