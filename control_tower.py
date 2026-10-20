@@ -122,26 +122,115 @@ ORDER_COLUMNS = [
 # ─────────────────────────────────────────────────────────────────────────────
 CSS = f"""
 <style>
-.block-container {{padding-top: 1.6rem; max-width: 1400px;}}
-h1, h2, h3 {{color: {NAVY}; letter-spacing: -0.01em;}}
-.app-header {{background: linear-gradient(90deg, {NAVY} 0%, #13345E 100%); color: white;
-  padding: 18px 24px; border-radius: 10px; margin-bottom: 14px;}}
-.app-header .eyebrow {{font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9FC9D0;}}
-.app-header .title {{font-size: 26px; font-weight: 700; margin: 2px 0;}}
-.app-header .sub {{font-size: 14px; color: #D3DEE8;}}
+html, body {{
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: linear-gradient(180deg, #F4F7FA 0%, #EEF4F7 100%) !important;
+    color: {NAVY} !important;
+}}
+
+[data-testid="stAppViewContainer"] {{
+    background: linear-gradient(180deg, #F4F7FA 0%, #EEF4F7 100%) !important;
+    color: {NAVY} !important;
+    overflow: auto !important;
+}}
+
+section[data-testid="stMain"] {{
+    background: linear-gradient(180deg, #F4F7FA 0%, #EEF4F7 100%) !important;
+    color: {NAVY} !important;
+    overflow: auto !important;
+}}
+
+.block-container {{
+    padding-top: 1.0rem !important;
+    padding-bottom: 2.5rem !important;
+    max-width: 1400px;
+    overflow: visible !important;
+}}
+
+h1, h2, h3, h4, h5, h6,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] strong,
+[data-testid="stMarkdownContainer"] em,
+label, [data-testid="stWidgetLabel"] p,
+.stTabs [role="tab"], .stRadio, .stCheckbox, .stSelectbox,
+.stNumberInput, .stTextInput, .stTextArea, .stDateInput,
+.stTimeInput, .stSlider {{
+    color: {NAVY} !important;
+}}
+
+.app-header {{
+    background: linear-gradient(90deg, {NAVY} 0%, #13345E 100%);
+    color: white !important;
+    padding: 18px 24px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 18px rgba(11, 31, 58, 0.12);
+}}
+.app-header, .app-header * {{color: #FFFFFF !important;}}
+.app-header .eyebrow {{font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #C5E8EC !important;}}
+.app-header .title {{font-size: 26px; font-weight: 700; margin: 2px 0; color: #FFFFFF !important;}}
+.app-header .sub {{font-size: 14px; color: #E3EDF5 !important;}}
 .kpi-grid {{display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 6px 0 14px;}}
-.kpi {{background: white; border: 1px solid #DCE5EA; border-left: 4px solid {TEAL}; border-radius: 8px; padding: 10px 14px;}}
+.kpi {{background: white; border: 1px solid #DCE5EA; border-left: 4px solid {TEAL}; border-radius: 8px; padding: 10px 14px; box-shadow: 0 2px 8px rgba(11,31,58,0.04);}}
 .kpi.warn {{border-left-color: {AMBER};}} .kpi.bad {{border-left-color: {RED};}}
-.kpi .label {{font-size: 11.5px; color: {GREY}; text-transform: uppercase; letter-spacing: .05em;}}
+.kpi .label {{font-size: 11.5px; color: #475569; text-transform: uppercase; letter-spacing: .05em;}}
 .kpi .value {{font-size: 24px; font-weight: 700; color: {NAVY}; line-height: 1.25;}}
-.kpi .delta {{font-size: 12px; color: {GREY};}}
+.kpi .delta {{font-size: 12px; color: #475569;}}
 .lens {{background: {LIGHT}; border: 1px solid #C8DCE2; border-radius: 8px; padding: 12px 16px; margin: 4px 0 16px;}}
-.lens .tag {{font-size: 11px; font-weight: 700; letter-spacing: .12em; color: {TEAL}; text-transform: uppercase;}}
+.lens .tag {{font-size: 11px; font-weight: 700; letter-spacing: .12em; color: #075E66; text-transform: uppercase;}}
 .lens ul {{margin: 6px 0 0 0; padding-left: 18px;}} .lens li {{margin-bottom: 3px; font-size: 14px;}}
 .step {{border-left: 3px solid {TEAL}; padding: 4px 0 4px 14px; margin: 8px 0;}}
-.step .n {{font-size: 12px; color: {TEAL}; font-weight: 700;}}
-.foot {{font-size: 12px; color: {GREY};}}
-section[data-testid="stSidebar"] {{background: #F6F9FB;}}
+.step .n {{font-size: 12px; color: #075E66; font-weight: 700;}}
+.foot {{font-size: 12px; color: #475569;}}
+section[data-testid="stSidebar"] {{
+    background: #F6F9FB !important;
+    color: {NAVY} !important;
+    border-right: 1px solid #D7E4EA;
+}}
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] li,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {{
+    color: {NAVY} !important;
+}}
+.stTabs [role="tablist"] button {{
+    color: {NAVY} !important;
+    background: transparent;
+    border: 1px solid #D7E4EA;
+    border-radius: 8px 8px 0 0;
+}}
+.stTabs [role="tablist"] button[aria-selected="true"] {{
+    background: white;
+    color: {NAVY} !important;
+    border-bottom-color: white;
+}}
+.stButton > button {{
+    background: linear-gradient(90deg, {TEAL} 0%, #15A4B2 100%);
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}}
+.stButton > button *,
+.stDownloadButton > button * {{
+    color: white !important;
+}}
+.stDownloadButton > button {{
+    background: {NAVY};
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}}
+[data-testid="stDataFrame"] {{
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #DCE5EA;
+}}
 </style>
 """
 
